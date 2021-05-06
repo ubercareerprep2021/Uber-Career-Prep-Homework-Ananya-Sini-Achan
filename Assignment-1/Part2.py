@@ -36,15 +36,20 @@ print(isStringPermutation("asdf", "fsda") == True)
 print(isStringPermutation("asdf", "fsa") == False)
 print(isStringPermutation("asdf", "fsax") == False)
 
+
 def pairsThatEqualSum(inputArray: list, targetSum: int) -> list:
+    hash_set = set()
     pairs = []
-    for i in range(len(inputArray)):
-        for j in range(i, len(inputArray)):
-            if ((inputArray[i] + inputArray[j]) ==  targetSum):
-                pairs.append((inputArray[i],inputArray[j]))
+    if len(inputArray) < 2:
+        return pairs
+    for i in range(0, len(inputArray)):
+        temp = targetSum - inputArray[i]
+        if temp in hash_set:
+            pairs.append((inputArray[i], temp))
+        hash_set.add(inputArray[i])    
     return pairs
 
 # Testing
-print(pairsThatEqualSum([1, 2, 3, 4, 5], 5) == [(1, 4), (2, 3)])
+print(pairsThatEqualSum([1, 2, 3, 4, 5], 5) == [(3, 2), (4, 1)])
 print(pairsThatEqualSum([1, 2, 3, 4, 5], 1) == [])
-print(pairsThatEqualSum([1, 2, 3, 4, 5], 7) == [(2, 5), (3, 4)])
+print(pairsThatEqualSum([1, 2, 3, 4, 5], 7) == [(4, 3), (5, 2)])
