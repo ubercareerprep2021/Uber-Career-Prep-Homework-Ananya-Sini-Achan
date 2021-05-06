@@ -41,3 +41,46 @@ print("Popped value: " , popped_value)
 
 print("Size of stack: ", myStack.size())
 # prints “Size of stack: 0”
+
+
+class Queue(object):
+    
+    def __init__(self):
+        self.values = []
+        
+    def enqueue(self, num):
+        self.values.append(num)
+        
+    def dequeue(self):
+        return self.values.pop(0)
+    
+    def rear(self):
+        return self.values[-1]
+    
+    def front(self):
+        return self.values[0]
+    
+    def size(self):
+        return len(self.values)
+    
+    def isEmpty(self):
+        return self.values == []
+
+
+myQueue = Queue()
+myQueue.enqueue(1)
+myQueue.enqueue(2)
+myQueue.enqueue(3)
+
+print("Size of queue: ", myQueue.size())
+# prints “Size of queue: 3”
+
+print("Front of queue: ", myQueue.front())
+# prints “Front of queue: 1”
+
+print("Rear of queue: ", myQueue.rear())
+# prints “Rear of queue: 3”
+
+dequeuedItem = myQueue.dequeue()
+print("Dequeue item: ", dequeuedItem)
+# prints “Dequeued item: 1”
