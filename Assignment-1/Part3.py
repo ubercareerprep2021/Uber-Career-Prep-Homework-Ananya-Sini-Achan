@@ -11,13 +11,13 @@ class Stack:
          self.items = []
 
     def push(self, item):
-         self.items.append(item)
+         self.values.insert(0, item)
 
     def pop(self):
          return self.items.pop()
 
     def top(self):
-         return self.items[len(self.items)-1]
+         return self.items[0]
     
     def isEmpty(self):
          return self.items == []
