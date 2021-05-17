@@ -36,6 +36,7 @@ def isStringPermutation(s1: str, s2: str) -> bool:
 print(isStringPermutation("asdf", "fsda") == True)
 print(isStringPermutation("asdf", "fsa") == False)
 print(isStringPermutation("asdf", "fsax") == False)
+print(isStringPermutation("", "") == True)
 
 
 def pairsThatEqualSum(inputArray: list, targetSum: int) -> list:
