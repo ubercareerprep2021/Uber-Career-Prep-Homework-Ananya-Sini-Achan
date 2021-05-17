@@ -54,3 +54,6 @@ def pairsThatEqualSum(inputArray: list, targetSum: int) -> list:
 print(pairsThatEqualSum([1, 2, 3, 4, 5], 5) == [(3, 2), (4, 1)])
 print(pairsThatEqualSum([1, 2, 3, 4, 5], 1) == [])
 print(pairsThatEqualSum([1, 2, 3, 4, 5], 7) == [(4, 3), (5, 2)])
+print(pairsThatEqualSum([1, 2, 2, 4, 5], 7) == [(5, 2)])
+print(pairsThatEqualSum([1, 2, 3, -4, 5], 7) == [(5, 2)])
+print(pairsThatEqualSum([1, -2, 3, -4, 5], -1) == [(-2,1), (-4,3)])
